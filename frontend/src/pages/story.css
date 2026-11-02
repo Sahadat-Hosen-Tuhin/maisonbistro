@@ -1,0 +1,37 @@
+.story-page, .contact-page { background: #f9f7f2; padding: 68px 7vw 85px; }
+.story-hero { align-items: center; display: grid; gap: 60px; grid-template-columns: 1.1fr .9fr; margin: 0 auto 92px; max-width: 1100px; }
+.story-hero h1, .contact-hero h1 { color: #29251f; font-family: Georgia, serif; font-size: clamp(38px, 5.3vw, 68px); font-weight: 500; letter-spacing: -.04em; line-height: 1.03; margin: 0 0 22px; }
+.story-hero h1 em, .contact-hero h1 em { color: #b3872a; font-style: italic; }
+.story-lead { color: #817a70; font-size: 13px; line-height: 1.8; margin: 0 0 26px; max-width: 470px; }
+.story-button { align-items: center; background: #f5bf32; border: 0; border-radius: 999px; color: #60470e; cursor: pointer; display: inline-flex; font-size: 11px; font-weight: 800; gap: 8px; padding: 12px 19px; text-decoration: none; }
+.story-button:hover { background: #e9af21; }
+.story-hero-art { align-items: center; background: #eee7d9; border-radius: 50% 50% 12px 50%; display: flex; height: 360px; justify-content: center; margin-left: auto; max-width: 360px; position: relative; width: 100%; }
+.story-art-circle { align-items: center; border: 1px solid #cba64d; border-radius: 50%; color: #b3872a; display: flex; font-family: Georgia, serif; font-size: 100px; height: 220px; justify-content: center; width: 220px; }
+.story-hero-art > span { background: #fff; border-radius: 50%; bottom: 23px; box-shadow: 0 8px 20px rgba(90, 68, 24, .1); color: #817a70; font-family: Georgia, serif; font-size: 12px; line-height: 1.4; padding: 25px 19px; position: absolute; right: 3px; text-align: center; }
+.story-intro { border-top: 1px solid #e8e2d9; display: grid; gap: 80px; grid-template-columns: 1fr 1fr; margin: 0 auto 63px; max-width: 1100px; padding-top: 36px; }
+.story-intro h2 { color: #342f28; font-family: Georgia, serif; font-size: clamp(25px, 3vw, 38px); font-weight: 500; line-height: 1.15; margin: 0; }
+.story-intro > p { color: #817a70; font-size: 12px; line-height: 1.9; margin: 0; padding-top: 17px; }
+.story-values { display: grid; gap: 14px; grid-template-columns: repeat(4, 1fr); margin: 0 auto 72px; max-width: 1100px; }
+.story-values article { background: #fff; border: 1px solid #eeeae2; border-radius: 9px; padding: 22px 18px; }
+.story-values article > span, .contact-detail > span { align-items: center; background: #fff6dc; border-radius: 50%; color: #b3872a; display: flex; height: 38px; justify-content: center; width: 38px; }
+.story-values h3, .contact-detail h2 { color: #453e35; font-size: 13px; margin: 16px 0 8px; }
+.story-values p, .contact-detail p { color: #aaa39a; font-size: 10px; line-height: 1.65; margin: 0; }
+.story-quote { margin: 0 auto; max-width: 760px; text-align: center; }
+.story-quote p { color: #453e35; font-family: Georgia, serif; font-size: clamp(23px, 3vw, 35px); font-style: italic; margin: 0 0 12px; }
+.story-quote span { color: #b3872a; font-size: 10px; }
+.contact-hero { margin: 0 auto 53px; max-width: 1100px; text-align: center; }
+.contact-hero > p:last-child { color: #817a70; font-size: 13px; line-height: 1.7; margin: 0 auto; max-width: 450px; }
+.contact-layout { display: grid; gap: 70px; grid-template-columns: .8fr 1.2fr; margin: 0 auto; max-width: 1100px; }
+.contact-details { display: grid; gap: 25px; padding-top: 10px; }
+.contact-detail { align-items: flex-start; display: flex; gap: 15px; }
+.contact-detail h2 { margin-top: 2px; }
+.contact-detail p { line-height: 1.8; }
+.contact-form { background: #fff; border: 1px solid #eeeae2; border-radius: 12px; padding: 30px; }
+.contact-form h2 { color: #342f28; font-family: Georgia, serif; font-size: 24px; font-weight: 500; margin: 0 0 22px; }
+.contact-form label { color: #615a51; display: grid; font-size: 10px; font-weight: 700; gap: 7px; margin-bottom: 15px; }
+.contact-form input, .contact-form textarea { background: #fffdfa; border: 1px solid #e8e2d9; border-radius: 6px; color: #453e35; font: inherit; font-size: 11px; outline: 0; padding: 11px 12px; resize: vertical; }
+.contact-form input:focus, .contact-form textarea:focus { border-color: #e4ad27; box-shadow: 0 0 0 3px rgba(228, 173, 39, .12); }
+.contact-form-grid { display: grid; gap: 13px; grid-template-columns: 1fr 1fr; }
+.contact-success { color: #4a8b55; font-size: 10px; margin: 0 0 15px; }
+@media (max-width: 800px) { .story-page, .contact-page { padding-left: 5vw; padding-right: 5vw; } .story-hero { gap: 35px; grid-template-columns: 1fr; } .story-hero-art { height: 280px; margin: 0 auto; max-width: 280px; } .story-art-circle { font-size: 75px; height: 170px; width: 170px; } .story-intro, .contact-layout { gap: 30px; grid-template-columns: 1fr; } .story-values { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .story-values { grid-template-columns: 1fr; } .contact-form { padding: 22px 17px; } .contact-form-grid { grid-template-columns: 1fr; } }

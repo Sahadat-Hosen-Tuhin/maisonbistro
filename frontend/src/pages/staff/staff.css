@@ -1,0 +1,91 @@
+.staff-shell { background: #f8f7f4; color: #3a362f; min-height: 100vh; }
+.staff-topbar { align-items: center; background: #fff; border-bottom: 1px solid #eeeae2; display: flex; justify-content: space-between; padding: 17px 5vw; }
+.staff-brand, .staff-topbar .staff-actions, .staff-brand div { align-items: center; display: flex; }
+.staff-brand { gap: 10px; }
+.staff-brand img { height: 40px; object-fit: contain; width: 55px; }
+.staff-brand div { flex-direction: column; align-items: start; gap: 3px; }
+.staff-brand strong { color: #342f28; font-size: 15px; }
+.staff-brand span, .staff-heading p { color: #b3872a; font-size: 9px; font-weight: 800; letter-spacing: .14em; }
+.staff-topbar .staff-actions { color: #615a51; gap: 13px; font-size: 10px; }
+.staff-topbar button { align-items: center; background: none; border: 0; color: #9c7017; cursor: pointer; display: flex; gap: 5px; padding: 5px; }
+.staff-main { margin: 0 auto; max-width: 1300px; padding: 40px 5vw 70px; }
+.staff-heading { align-items: end; display: flex; justify-content: space-between; margin-bottom: 25px; }
+.staff-heading-actions { align-items: center; display: flex; flex-wrap: wrap; gap: 9px; justify-content: flex-end; }
+.staff-link-button, .staff-heading-actions button { align-items: center; background: #3c3428; border: 1px solid #3c3428; border-radius: 6px; color: #fff; cursor: pointer; display: inline-flex; font-size: 10px; font-weight: 800; gap: 5px; padding: 9px 12px; text-decoration: none; }
+.staff-link-button:hover, .staff-heading-actions button:hover { background: #a97916; border-color: #a97916; }
+.staff-heading p { margin: 0 0 8px; }
+.staff-heading h1 { color: #29251f; font-family: Georgia, serif; font-size: 34px; font-weight: 500; margin: 0; }
+.staff-heading > span { color: #aaa39a; font-size: 11px; }
+.kitchen-grid { display: grid; gap: 15px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.kitchen-order-card { background: #fff; border: 1px solid #eeeae2; border-left: 4px solid #e4ad27; border-radius: 9px; padding: 17px; }
+.kitchen-order-card.processing { border-left-color: #8c79b6; }
+.kitchen-order-card.served { border-left-color: #4a8b55; }
+.kitchen-order-head, .kitchen-order-footer, .cashier-order { align-items: center; display: flex; justify-content: space-between; }
+.kitchen-order-head strong, .kitchen-order-head span, .kitchen-items div { display: block; }
+.kitchen-order-head strong { color: #453e35; font-size: 13px; }
+.kitchen-order-head span { color: #aaa39a; font-size: 9px; margin-top: 4px; }
+.kitchen-order-head b { color: #9c7017; font-size: 9px; text-transform: capitalize; }
+.kitchen-items { border-bottom: 1px solid #f1eee8; border-top: 1px solid #f1eee8; margin: 15px 0; padding: 12px 0; }
+.kitchen-items div { padding: 6px 0; }
+.kitchen-items strong { color: #615a51; font-size: 11px; }
+.kitchen-items span, .kitchen-items small { color: #aaa39a; display: block; font-size: 9px; margin-top: 3px; }
+.kitchen-order-footer > span { color: #9c7017; font-size: 13px; font-weight: 800; }
+.kitchen-order-footer button, .cashier-order button { align-items: center; background: #f5bf32; border: 0; border-radius: 6px; color: #60470e; cursor: pointer; display: flex; font-size: 10px; font-weight: 800; gap: 5px; padding: 9px 11px; }
+.kitchen-stats { display: grid; gap: 12px; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-bottom: 20px; }
+.kitchen-stats article { background: #fff; border: 1px solid #eeeae2; border-radius: 9px; padding: 14px; }
+.kitchen-stats span { color: #99938a; display: block; font-size: 10px; }
+.kitchen-stats strong { color: #342f28; display: block; font-family: Georgia, serif; font-size: 22px; font-weight: 500; margin-top: 6px; }
+.kitchen-issue { align-items: center; background: #fff1ed; border-radius: 5px; color: #a4473b; display: flex; font-size: 10px; gap: 5px; padding: 8px; }
+.kitchen-history, .chef-work { display: grid; gap: 14px; }
+.cashier-notice { color: #6d655b; font-size: 11px; margin: 0; }
+.staff-empty { align-items: center; color: #aaa39a; display: flex; flex-direction: column; font-size: 11px; gap: 8px; justify-content: center; min-height: 180px; text-align: center; }
+.cashier-summary { display: grid; gap: 14px; grid-template-columns: repeat(2, 220px); margin-bottom: 20px; }
+.cashier-summary article { background: #fff; border: 1px solid #eeeae2; border-radius: 9px; padding: 16px; }
+.cashier-summary span { color: #99938a; display: block; font-size: 10px; }
+.cashier-summary strong { color: #342f28; display: block; font-family: Georgia, serif; font-size: 22px; font-weight: 500; margin-top: 7px; }
+.cashier-list { background: #fff; border: 1px solid #eeeae2; border-radius: 10px; padding: 0 20px; }
+.cashier-order { border-bottom: 1px solid #f1eee8; gap: 16px; padding: 15px 0; }
+.cashier-order:last-child { border-bottom: 0; }
+.cashier-order > div { display: grid; gap: 4px; margin-right: auto; }
+.cashier-order > div strong { color: #453e35; font-size: 12px; }
+.cashier-order > div span { color: #aaa39a; font-size: 9px; }
+.cashier-order > b { color: #9c7017; font-size: 13px; }
+.cashier-order select { border: 1px solid #e8e2d9; border-radius: 5px; color: #615a51; font-size: 10px; padding: 8px; }
+.cashier-summary-wide { grid-template-columns: repeat(4, minmax(140px, 1fr)); width: 100%; }
+.staff-tabs { border-bottom: 1px solid #e8e2d9; display: flex; gap: 5px; margin: 22px 0; overflow-x: auto; }
+.staff-tabs button { background: transparent; border: 0; border-bottom: 2px solid transparent; color: #827a6f; cursor: pointer; font-size: 11px; font-weight: 700; padding: 12px 15px; white-space: nowrap; }
+.staff-tabs button.active { border-bottom-color: #b3872a; color: #8b6518; }
+.cashier-toolbar { display: flex; gap: 8px; padding: 16px 0; }
+.cashier-toolbar input, .cashier-toolbar button, .cashier-amount { border: 1px solid #e8e2d9; border-radius: 5px; font-size: 10px; padding: 9px; }
+.cashier-toolbar input { flex: 1; }
+.cashier-toolbar button, .cashier-attendance-actions button, .cashier-profile-card button, .table-actions button { background: #f5bf32; border: 0; border-radius: 5px; color: #60470e; cursor: pointer; font-size: 10px; font-weight: 800; padding: 9px 12px; }
+.cashier-amount { max-width: 100px; width: 100%; }
+.cashier-order .invoice-button { background: #f5f2eb; color: #80631f; }
+.cashier-table-wrap { background: #fff; border: 1px solid #eeeae2; border-radius: 10px; overflow-x: auto; }
+.cashier-table { border-collapse: collapse; min-width: 650px; width: 100%; }
+.cashier-table th, .cashier-table td { border-bottom: 1px solid #f1eee8; font-size: 10px; padding: 13px 15px; text-align: left; }
+.cashier-table th { background: #fbfaf7; color: #8f887e; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
+.cashier-table td { color: #615a51; }
+.table-actions { display: flex; gap: 5px; }
+.table-actions button:last-child { background: #f8e6e3; color: #a4473b; }
+.cashier-attendance-actions { align-items: center; background: #fff; border: 1px solid #eeeae2; border-radius: 10px; display: flex; gap: 10px; margin-bottom: 14px; padding: 16px; }
+.cashier-attendance-actions div { display: grid; gap: 5px; margin-right: auto; }
+.cashier-attendance-actions span, .cashier-profile-card small { color: #99938a; font-size: 10px; }
+.cashier-attendance-actions strong { color: #453e35; font-size: 12px; }
+.cashier-attendance-actions button:disabled { cursor: not-allowed; opacity: .45; }
+.cashier-notices { background: #fffaf0; border: 1px solid #f1dfb5; border-radius: 10px; margin-top: 20px; padding: 16px; }
+.cashier-notices h2, .cashier-profile-card h2 { color: #453e35; font-family: Georgia, serif; font-size: 18px; font-weight: 500; margin: 0 0 12px; }
+.cashier-notices p { color: #6d655b; font-size: 11px; margin: 8px 0; }
+.cashier-notices p.unread { color: #453e35; font-weight: 600; }
+.cashier-notices button { background: transparent; border: 0; color: #9c7017; cursor: pointer; font-size: 10px; margin-left: 8px; text-decoration: underline; }
+.profile-grid { display: grid; gap: 15px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cashier-profile-card { background: #fff; border: 1px solid #eeeae2; border-radius: 10px; display: grid; gap: 10px; padding: 20px; }
+.cashier-profile-card label { color: #7d756b; display: grid; font-size: 10px; gap: 5px; }
+.cashier-profile-card input { border: 1px solid #e8e2d9; border-radius: 5px; font-size: 11px; padding: 10px; }
+.cashier-profile-card button { justify-self: start; }
+.staff-main .admin-page-heading > button, .staff-main .admin-panel button[type="submit"] { background: #3c3428; border: 1px solid #3c3428; border-radius: 6px; color: #fff; cursor: pointer; font-size: 10px; font-weight: 800; padding: 9px 13px; }
+.staff-main .admin-page-heading > button:hover, .staff-main .admin-panel button[type="submit"]:hover { background: #a97916; border-color: #a97916; }
+.staff-main .admin-text-button { background: #fff; border: 1px solid #d8c7a2; border-radius: 5px; color: #8b6518; padding: 7px 10px; }
+.staff-main .admin-danger-button { margin-left: 5px; }
+@media (max-width: 950px) { .kitchen-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 650px) { .staff-topbar { padding: 14px 18px; } .staff-topbar .staff-actions > span { display: none; } .staff-main { padding: 28px 16px 50px; } .kitchen-grid { grid-template-columns: 1fr; } .kitchen-stats { grid-template-columns: 1fr 1fr; } .cashier-summary, .cashier-summary-wide { grid-template-columns: 1fr 1fr; } .cashier-order { align-items: start; flex-wrap: wrap; } .cashier-order > div { min-width: 45%; } .profile-grid { grid-template-columns: 1fr; } .cashier-attendance-actions { align-items: stretch; flex-direction: column; } .cashier-attendance-actions div { margin-right: 0; } }

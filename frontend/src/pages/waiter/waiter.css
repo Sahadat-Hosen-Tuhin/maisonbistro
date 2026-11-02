@@ -1,0 +1,118 @@
+.waiter-shell { background: #f8f7f4; color: #3a362f; min-height: 100vh; }
+.waiter-topbar { align-items: center; background: #fff; border-bottom: 1px solid #eeeae2; display: flex; justify-content: space-between; padding: 18px 5vw; }
+.waiter-brand, .waiter-user, .waiter-section-heading, .waiter-total, .waiter-order-row { align-items: center; display: flex; }
+.waiter-brand { gap: 10px; }
+.waiter-brand img { height: 40px; object-fit: contain; width: 55px; }
+.waiter-brand div { display: grid; gap: 3px; }
+.waiter-brand strong { color: #342f28; font-size: 15px; }
+.waiter-brand span, .waiter-section-heading span, .waiter-heading p { color: #b3872a; font-size: 9px; font-weight: 800; letter-spacing: .14em; }
+.waiter-user { color: #615a51; gap: 16px; font-size: 11px; }
+.waiter-user button { align-items: center; background: none; border: 0; color: #a97916; cursor: pointer; display: flex; font-size: 10px; gap: 5px; }
+.waiter-main { margin: 0 auto; max-width: 1400px; padding: 38px 5vw 65px; }
+.waiter-heading { align-items: end; display: flex; justify-content: space-between; margin-bottom: 26px; }
+.waiter-heading-actions { align-items: center; display: flex; gap: 14px; }
+.waiter-refresh { align-items: center; background: #fff; border: 1px solid #eeeae2; border-radius: 6px; color: #9c7017; cursor: pointer; display: flex; font-size: 10px; gap: 5px; padding: 8px 10px; }
+.waiter-heading p { margin: 0 0 8px; }
+.waiter-heading h1 { color: #29251f; font-family: Georgia, serif; font-size: 32px; font-weight: 500; margin: 0; }
+.waiter-date { color: #aaa39a; font-size: 11px; }
+.waiter-layout { display: grid; gap: 22px; grid-template-columns: minmax(0, 1fr) 330px; }
+.waiter-stat-grid { display: grid; gap: 12px; grid-template-columns: repeat(4, 1fr); margin-bottom: 22px; }
+.waiter-stat-grid article { background: #fff; border: 1px solid #eeeae2; border-radius: 9px; padding: 14px 16px; }
+.waiter-stat-grid span { color: #99938a; display: block; font-size: 10px; }
+.waiter-stat-grid strong { color: #342f28; display: block; font-family: Georgia, serif; font-size: 24px; font-weight: 500; margin-top: 6px; }
+.waiter-tabs { display: flex; gap: 7px; margin-bottom: 18px; }
+.waiter-tabs button { background: #fff; border: 1px solid #eeeae2; border-radius: 7px; color: #817a70; cursor: pointer; font-size: 10px; padding: 10px 14px; }
+.waiter-tabs button.active { background: #fff6dc; border-color: #f0dfb8; color: #9c7017; font-weight: 800; }
+.waiter-tabs b { background: #f5bf32; border-radius: 99px; color: #60470e; font-size: 8px; margin-left: 4px; padding: 2px 5px; }
+.waiter-menu-panel, .waiter-order-panel, .waiter-recent { background: #fff; border: 1px solid #eeeae2; border-radius: 12px; }
+.waiter-menu-panel { min-width: 0; padding: 23px; }
+.waiter-order-panel { padding: 23px; }
+.waiter-section-heading { justify-content: space-between; margin-bottom: 20px; }
+.waiter-section-heading h2 { align-items: center; color: #342f28; display: flex; font-family: Georgia, serif; font-size: 20px; font-weight: 500; gap: 7px; margin: 5px 0 0; }
+.waiter-section-heading > svg { color: #b3872a; }
+.waiter-menu-tools { display: flex; flex-direction: column; gap: 10px; }
+.waiter-menu-tools > input { border: 1px solid #eeeae2; border-radius: 7px; color: #615a51; font-size: 11px; outline: 0; padding: 10px 12px; width: 100%; }
+.waiter-categories { display: flex; gap: 8px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 3px; }
+.waiter-categories button { background: #faf8f3; border: 1px solid #eeeae2; border-radius: 999px; color: #817a70; cursor: pointer; font-size: 10px; padding: 9px 13px; white-space: nowrap; }
+.waiter-categories button.active { background: #f5bf32; border-color: #f5bf32; color: #60470e; font-weight: 800; }
+.waiter-item-grid { display: grid; gap: 13px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.waiter-item-card { background: #fff; border: 1px solid #eeeae2; border-radius: 9px; cursor: pointer; overflow: hidden; padding: 0; text-align: left; transition: transform 160ms ease, box-shadow 160ms ease; }
+.waiter-item-card:hover { box-shadow: 0 9px 18px rgba(90, 68, 24, .1); transform: translateY(-2px); }
+.waiter-item-card img, .waiter-item-placeholder { background: #f2eee5; height: 110px; object-fit: cover; width: 100%; }
+.waiter-item-placeholder { align-items: center; color: #aaa39a; display: flex; font-size: 10px; justify-content: center; }
+.waiter-item-card > div:last-child { display: grid; gap: 4px; padding: 10px; }
+.waiter-item-card strong { color: #453e35; font-size: 12px; }
+.waiter-item-card span { color: #9c7017; font-size: 11px; font-weight: 800; }
+.waiter-item-card small { color: #aaa39a; font-size: 9px; }
+.waiter-order-panel label { color: #615a51; display: grid; font-size: 10px; font-weight: 700; gap: 6px; margin-bottom: 12px; }
+.waiter-order-panel select, .waiter-guest-grid input { background: #fffdfa; border: 1px solid #e8e2d9; border-radius: 6px; color: #615a51; font: inherit; font-size: 10px; outline: 0; padding: 10px; }
+.waiter-guest-grid { display: grid; gap: 7px; grid-template-columns: 1fr 1fr; margin-bottom: 15px; }
+.waiter-cart { border-bottom: 1px solid #f1eee8; border-top: 1px solid #f1eee8; min-height: 160px; padding: 12px 0; }
+.waiter-empty { color: #aaa39a; font-size: 11px; padding: 35px 5px; text-align: center; }
+.waiter-cart-row { align-items: center; display: flex; justify-content: space-between; padding: 8px 0; }
+.waiter-cart-row > div:first-child { display: grid; gap: 3px; }
+.waiter-cart-row strong { color: #453e35; font-size: 11px; }
+.waiter-cart-row small { color: #aaa39a; font-size: 9px; }
+.waiter-cart-row > div:last-child { align-items: center; display: flex; gap: 7px; }
+.waiter-cart-row button { align-items: center; background: #fff6dc; border: 0; border-radius: 50%; color: #9c7017; cursor: pointer; display: flex; padding: 5px; }
+.waiter-cart-row span { color: #615a51; font-size: 10px; }
+.waiter-total { justify-content: space-between; padding: 15px 0; }
+.waiter-total span { color: #817a70; font-size: 11px; }
+.waiter-total strong { color: #9c7017; font-size: 18px; }
+.waiter-place-button { background: #efb72e; border: 0; border-radius: 7px; color: #60470e; cursor: pointer; font-size: 11px; font-weight: 800; padding: 13px; width: 100%; }
+.waiter-place-button:disabled { cursor: not-allowed; opacity: .5; }
+.waiter-order-types { display: flex; gap: 5px; margin-bottom: 13px; }
+.waiter-order-types button { background: #faf8f3; border: 1px solid #eeeae2; border-radius: 5px; color: #817a70; cursor: pointer; flex: 1; font-size: 9px; padding: 8px 5px; }
+.waiter-order-types button.active { background: #fff6dc; border-color: #f0dfb8; color: #9c7017; font-weight: 800; }
+.clear-cart { background: none; border: 0; color: #bd5f57; cursor: pointer; font-size: 9px; }
+.waiter-recent { margin-top: 22px; padding: 23px; }
+.waiter-order-row { border-top: 1px solid #f1eee8; color: #817a70; font-size: 10px; gap: 20px; padding: 13px 0; }
+.waiter-order-row strong { color: #453e35; }
+.waiter-order-row span:nth-child(2) { margin-right: auto; }
+.waiter-order-row b { color: #a97916; font-size: 9px; text-transform: capitalize; }
+.waiter-order-actions { display: flex; gap: 5px; }
+.waiter-order-actions button { align-items: center; background: #fff6dc; border: 0; border-radius: 5px; color: #9c7017; cursor: pointer; display: flex; padding: 5px; }
+.waiter-order-actions button:last-child { background: #fff0ef; color: #bd5f57; }
+.waiter-full-panel { margin-top: 0; }
+.waiter-table-grid { display: grid; gap: 12px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.waiter-table-status { background: #fbfaf7; border: 1px solid #eeeae2; border-left: 4px solid #e4ad27; border-radius: 8px; display: grid; gap: 6px; padding: 15px; }
+.waiter-table-status.occupied { border-left-color: #bd5f57; }
+.waiter-table-status.reserved { border-left-color: #8c79b6; }
+.waiter-table-status strong { color: #453e35; font-size: 12px; }
+.waiter-table-status span { color: #aaa39a; font-size: 9px; }
+.waiter-table-status b { color: #9c7017; font-size: 9px; text-transform: capitalize; }
+.waiter-work-panel { display: grid; gap: 18px; }
+.waiter-work-cards, .waiter-profile-grid { display: grid; gap: 14px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.waiter-work-cards article, .waiter-work-section, .waiter-profile-card { background: #fff; border: 1px solid #eeeae2; border-radius: 10px; padding: 20px; }
+.waiter-work-cards article { display: grid; gap: 7px; }
+.waiter-work-cards span, .waiter-work-cards small { color: #99938a; font-size: 10px; }
+.waiter-work-cards strong { color: #453e35; font-family: Georgia, serif; font-size: 20px; font-weight: 500; text-transform: capitalize; }
+.waiter-work-actions { display: flex; gap: 7px; margin-top: 6px; }
+.waiter-work-actions button, .waiter-profile-card button, .waiter-data-table button, .waiter-notice button { background: #f5bf32; border: 0; border-radius: 5px; color: #60470e; cursor: pointer; font-size: 10px; font-weight: 800; padding: 8px 10px; }
+.waiter-work-actions button:disabled { cursor: not-allowed; opacity: .45; }
+.waiter-work-section h2, .waiter-profile-card h2 { color: #453e35; font-family: Georgia, serif; font-size: 18px; font-weight: 500; margin: 0 0 12px; }
+.waiter-data-table p { align-items: center; border-top: 1px solid #f1eee8; color: #817a70; display: flex; font-size: 10px; gap: 12px; justify-content: space-between; margin: 0; padding: 12px 0; }
+.waiter-data-table p span:first-child { color: #453e35; font-weight: 700; }
+.waiter-data-table p b { color: #9c7017; font-size: 9px; font-weight: 700; text-transform: capitalize; }
+.waiter-data-table button { margin-left: 5px; padding: 5px 7px; }
+.waiter-data-table button:last-child { background: #fff0ef; color: #bd5f57; }
+.waiter-notice { color: #817a70; font-size: 11px; margin: 8px 0; }
+.waiter-notice.unread { color: #453e35; font-weight: 600; }
+.waiter-notice button { margin-left: 8px; padding: 5px 7px; }
+.waiter-profile-card { display: grid; gap: 10px; }
+.waiter-profile-card label { color: #817a70; display: grid; font-size: 10px; gap: 5px; }
+.waiter-profile-card input { border: 1px solid #e8e2d9; border-radius: 5px; font-size: 11px; padding: 9px; }
+.waiter-profile-card button { justify-self: start; }
+.waiter-modal-backdrop { align-items: center; background: rgba(48, 41, 31, .35); display: flex; inset: 0; justify-content: center; padding: 18px; position: fixed; z-index: 20; }
+.waiter-modal { background: #fff; border-radius: 12px; max-width: 390px; padding: 22px; position: relative; width: 100%; }
+.waiter-modal-close { align-items: center; background: rgba(255,255,255,.9); border: 0; border-radius: 50%; color: #817a70; cursor: pointer; display: flex; padding: 6px; position: absolute; right: 14px; top: 14px; }
+.waiter-modal-image { background: #f2eee5; border-radius: 8px; height: 170px; margin-bottom: 15px; overflow: hidden; }
+.waiter-modal-image img { height: 100%; object-fit: cover; width: 100%; }
+.waiter-modal-image span { align-items: center; color: #aaa39a; display: flex; height: 100%; justify-content: center; }
+.waiter-modal-category { color: #b3872a; font-size: 9px; font-weight: 800; text-transform: uppercase; }
+.waiter-modal h2 { color: #342f28; font-family: Georgia, serif; font-size: 24px; font-weight: 500; margin: 5px 0 6px; }
+.waiter-modal p { color: #aaa39a; font-size: 10px; line-height: 1.6; margin: 0 0 16px; }
+.waiter-modal label { color: #615a51; display: grid; font-size: 10px; font-weight: 700; gap: 6px; margin-bottom: 12px; }
+.waiter-modal select { border: 1px solid #e8e2d9; border-radius: 6px; color: #615a51; font-size: 10px; padding: 10px; }
+@media (max-width: 950px) { .waiter-layout { grid-template-columns: 1fr; } .waiter-order-panel { order: -1; } .waiter-item-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } .waiter-table-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 650px) { .waiter-topbar { padding: 15px 20px; } .waiter-user > span { display: none; } .waiter-main { padding: 27px 16px 45px; } .waiter-item-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .waiter-menu-panel, .waiter-order-panel, .waiter-recent { padding: 17px; } .waiter-order-row { gap: 8px; flex-wrap: wrap; } .waiter-stat-grid { grid-template-columns: repeat(2, 1fr); } .waiter-heading { align-items: start; gap: 12px; } .waiter-heading-actions { align-items: end; flex-direction: column; gap: 8px; } .waiter-table-grid, .waiter-work-cards, .waiter-profile-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .waiter-data-table p { align-items: start; flex-direction: column; gap: 5px; } }

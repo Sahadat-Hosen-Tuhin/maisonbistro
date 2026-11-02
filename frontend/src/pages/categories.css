@@ -1,0 +1,35 @@
+.categories-page { background: #f9f7f2; min-height: 65vh; padding: 64px 7vw 90px; }
+.categories-hero { margin: 0 auto 42px; max-width: 760px; text-align: center; }
+.categories-hero h1 { color: #29251f; font-family: Georgia, serif; font-size: clamp(35px, 5vw, 58px); font-weight: 500; margin: 0 0 13px; }
+.categories-hero > p:last-child { color: #99938a; font-size: 13px; line-height: 1.7; margin: 0 auto; max-width: 450px; }
+.category-grid { display: grid; gap: 18px; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0 auto; max-width: 1240px; }
+.category-card { background: #fff; border: 1px solid #eeeae2; border-radius: 12px; color: inherit; overflow: hidden; text-decoration: none; transition: box-shadow 180ms ease, transform 180ms ease; }
+.category-card:hover { box-shadow: 0 14px 28px rgba(90, 68, 24, .12); transform: translateY(-4px); }
+.category-card-image { align-items: center; background: #f1ede4; color: #d3b05c; display: flex; height: 190px; justify-content: center; overflow: hidden; position: relative; }
+.category-card-image img { height: 100%; object-fit: cover; width: 100%; }
+.category-card-image > span { align-items: center; background: #f5bf32; border-radius: 50%; bottom: 13px; color: #60470e; display: flex; height: 31px; justify-content: center; position: absolute; right: 13px; width: 31px; }
+.category-card-content { align-items: end; display: flex; gap: 12px; justify-content: space-between; padding: 17px 15px 18px; }
+.category-card-content h2 { color: #453e35; font-family: Georgia, serif; font-size: 17px; font-weight: 500; margin: 0 0 6px; }
+.category-card-content p { color: #aaa39a; font-size: 10px; line-height: 1.5; margin: 0; }
+.category-card-content strong { color: #a97916; font-size: 10px; white-space: nowrap; }
+.category-empty { background: #fff; border: 1px dashed #e5dfd3; border-radius: 9px; color: #99938a; font-size: 12px; margin: 0 auto; max-width: 1240px; padding: 55px 20px; text-align: center; }
+.category-detail-page { background: #f9f7f2; min-height: 65vh; padding: 64px 7vw 90px; }
+.category-detail-hero { margin: 0 auto 42px; max-width: 1100px; }
+.category-detail-hero h1 { color: #29251f; font: 500 clamp(38px, 5vw, 58px) Georgia, serif; margin: 0 0 12px; }
+.category-detail-hero > p:last-child { color: #99938a; font-size: 12px; line-height: 1.7; margin: 0; max-width: 900px; }
+.category-detail-grid { display: grid; gap: 20px; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0 auto; max-width: 1240px; }
+.category-detail-card { background: #fff; border: 1px solid #eeeae2; border-radius: 10px; color: inherit; display: block; min-width: 0; overflow: hidden; text-decoration: none; transition: box-shadow 180ms ease, transform 180ms ease; }
+.category-detail-card:hover { box-shadow: 0 14px 28px rgba(90, 68, 24, .12); transform: translateY(-4px); }
+.category-detail-image { background: #f1ede4; height: 210px; overflow: hidden; }
+.category-detail-image img { height: 100%; object-fit: cover; width: 100%; }
+.category-detail-image span { align-items: center; color: #aaa39a; display: flex; height: 100%; justify-content: center; }
+.category-detail-content { padding: 17px 16px 19px; }
+.category-detail-content h2 { color: #453e35; font: 500 18px Georgia, serif; margin: 5px 0 8px; }
+.category-detail-content p { color: #99938a; font-size: 10px; line-height: 1.55; margin: 0 0 15px; min-height: 48px; }
+.category-detail-content strong { align-items: center; color: #9c7017; display: flex; font-size: 14px; gap: 4px; }
+@media (max-width: 1000px) { .category-detail-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 700px) { .category-detail-page { padding: 42px 22px 65px; } .category-detail-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .category-detail-image { height: 170px; } }
+@media (max-width: 440px) { .category-detail-grid { grid-template-columns: 1fr; } }
+@media (max-width: 1000px) { .category-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 700px) { .categories-page { padding: 42px 22px 65px; } .category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .category-card-image { height: 145px; } }
+@media (max-width: 440px) { .category-grid { grid-template-columns: 1fr; } }

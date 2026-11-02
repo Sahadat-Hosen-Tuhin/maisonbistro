@@ -1,0 +1,35 @@
+import { useEffect, useState } from 'react'
+import { CheckCircle2, LogOut, RefreshCw, Truck } from 'lucide-react'
+import toast from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom'
+import api from '../../services/api'
+import './staff.css'
+
+function DeliveryDashboard() {
+  const navigate = useNavigate()
+  const user = JSON.parse(localStorage.getItem('maison_delivery_user') || '{}')
+  const [orders, setOrders] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [tab, setTab] = useState('orders')
+  const [history, setHistory] = useState([])
+  const [attendance, setAttendance] = useState([])
+  const [leave, setLeave] = useState([])
+  const [salary, setSalary] = useState([])
+  async function load() {
+    try { const [ordersResponse, historyResponse, attendanceResponse, leaveResponse, salaryResponse] = await Promise.all([api.get('/delivery/orders'), api.get('/delivery/history'), api.get('/employee/attendance'), api.get('/employee/leave'), api.get('/employee/salary')]); setOrders(ordersResponse.data.data || []); setHistory(historyResponse.data.data || []); setAttendance(attendanceResponse.data.data || []); setLeave(leaveResponse.data.data || []); setSalary(salaryResponse.data.data || []) }
+    catch (error) { toast.error(error.response?.data?.message || 'Unable to load delivery orders') }
+    finally { setLoading(false) }
+  }
+  useEffect(() => { load(); const timer = setInterval(load, 30000); return () => clearInterval(timer) }, [])
+  async function action(order, action) {
+    try {
+      await api.patch(`/delivery/orders/${order._id}/${action === 'accept' ? 'accept' : 'status'}`, action === 'accept' ? {} : { status: order.deliveryStatus })
+      toast.success(action === 'accept' ? 'Delivery accepted' : action === 'picked_up' ? 'Order picked up' : action === 'out_for_delivery' ? 'Out for delivery' : action === 'delivered' ? 'Delivered and cash collected' : 'Cash marked ready for cashier')
+      await load()
+    } catch (error) { toast.error(error.response?.data?.message || 'Unable to update delivery') }
+  }
+  function logout() { localStorage.removeItem('maison_delivery_token'); localStorage.removeItem('maison_delivery_user'); navigate('/delivery/login', { replace: true }) }
+  return <div className="staff-shell"><header className="staff-topbar"><div className="staff-brand"><Truck size={18} /><strong>Maison Bistro</strong><span>Delivery</span></div><div><span>{user.fullName || 'Delivery staff'}</span><button onClick={logout}><LogOut size={14} /> Sign out</button></div></header><main className="staff-main"><div className="staff-heading"><div><p>DELIVERY DESK</p><h1>Delivery dashboard</h1></div><button type="button" onClick={load}><RefreshCw size={14} /> Refresh</button></div><nav className="staff-tabs"><button className={tab === 'orders' ? 'active' : ''} onClick={() => setTab('orders')}>Assigned</button><button className={tab === 'history' ? 'active' : ''} onClick={() => setTab('history')}>History</button><button className={tab === 'attendance' ? 'active' : ''} onClick={() => setTab('attendance')}>Attendance</button><button className={tab === 'leave' ? 'active' : ''} onClick={() => setTab('leave')}>Leave</button><button className={tab === 'salary' ? 'active' : ''} onClick={() => setTab('salary')}>Salary</button></nav>{loading ? <p className="staff-empty">Loading delivery dashboard...</p> : tab === 'orders' ? <section className="cashier-list">{orders.map((order) => { const contact = order.deliveryContact || { name: order.customer?.fullName || order.guest?.name || 'Guest customer', phone: order.customer?.phone || order.guest?.phone || '', address: order.deliveryAddress || order.guest?.address || '', instructions: order.deliveryInstructions || '' }; return <article className="cashier-order online-order-card" key={order._id}><div><strong>#{order.orderNumber}</strong><span>Customer: {contact.name}</span><span>Phone: {contact.phone ? <a href={`tel:${contact.phone}`}>{contact.phone}</a> : 'No phone provided'}</span><span>Address: {contact.address || 'No delivery address provided'}</span>{contact.instructions && <small>Instructions: {contact.instructions}</small>}<small>Items: {order.items?.map((item) => `${item.quantity} × ${item.name}`).join(', ')}</small></div><b>৳{Number(order.total || 0).toFixed(2)}</b>{order.deliveryStatus === 'awaiting_pickup' && !order.assignedDeliveryStaff && <button onClick={() => action(order, 'accept')}><CheckCircle2 size={14} /> Accept</button>}{order.deliveryStatus === 'accepted' && <button onClick={() => action(order, 'picked_up')}><CheckCircle2 size={14} /> Picked up</button>}{order.deliveryStatus === 'picked_up' && <button onClick={() => action(order, 'out_for_delivery')}><CheckCircle2 size={14} /> Out for delivery</button>}{order.deliveryStatus === 'out_for_delivery' && <button onClick={() => action(order, 'delivered')}><CheckCircle2 size={14} /> Delivered / cash received</button>}{order.deliveryStatus === 'delivered' && <button onClick={() => action(order, 'cash_collected')}><CheckCircle2 size={14} /> Transfer cash to cashier</button>}<span>{order.deliveryStatus}</span></article> })}{!orders.length && <p className="staff-empty">No approved orders waiting for delivery.</p>}</section> : tab === 'history' ? <section className="cashier-list">{history.map((order) => <article className="cashier-order" key={order._id}><div><strong>#{order.orderNumber}</strong><span>{order.deliveryStatus} · {order.paymentStatus}</span></div><b>৳{Number(order.total || 0).toFixed(2)}</b></article>)}</section> : tab === 'attendance' ? <section className="cashier-list"><button onClick={async () => { await api.post('/employee/attendance/check-in'); await load() }}>Check in</button><button onClick={async () => { await api.post('/employee/attendance/check-out'); await load() }}>Check out</button>{attendance.map((entry) => <article className="cashier-order" key={entry._id}><div><strong>{new Date(entry.date).toLocaleDateString()}</strong><span>{entry.status} · approval {entry.approval?.status || 'pending'}</span></div></article>)}</section> : tab === 'leave' ? <section className="cashier-list"><form onSubmit={async (event) => { event.preventDefault(); const form = new FormData(event.currentTarget); await api.post('/employee/leave', Object.fromEntries(form)); event.currentTarget.reset(); await load() }}><input name="startDate" type="date" required /><input name="endDate" type="date" required /><input name="reason" placeholder="Reason" required /><button>Apply for leave</button></form>{leave.map((entry) => <article className="cashier-order" key={entry._id}><span>{new Date(entry.startDate).toLocaleDateString()} - {new Date(entry.endDate).toLocaleDateString()} · {entry.status}</span></article>)}</section> : <section className="cashier-list">{salary.map((entry) => <article className="cashier-order" key={entry._id}><div><strong>{entry.salaryMonth}</strong><span>Payable ৳{entry.totalPayable} · deduction ৳{entry.deductions}</span></div><span>{entry.status}</span></article>)}</section>}</main></div>
+}
+
+export default DeliveryDashboard
