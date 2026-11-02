@@ -2,8 +2,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import multer from 'multer';
 
-const profileDirectory = path.resolve('uploads', 'profiles');
-const menuDirectory = path.resolve('uploads', 'menu');
+const uploadRoot = process.env.VERCEL
+  ? path.join('/tmp', 'maison-bistro-uploads')
+  : path.resolve('uploads');
+export const uploadDirectory = uploadRoot;
+const profileDirectory = path.join(uploadRoot, 'profiles');
+const menuDirectory = path.join(uploadRoot, 'menu');
 fs.mkdirSync(profileDirectory, { recursive: true });
 fs.mkdirSync(menuDirectory, { recursive: true });
 

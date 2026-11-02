@@ -66,7 +66,22 @@ npm run dev
 
 The frontend reads the backend URL from `VITE_API_URL`. Vite only exposes variables prefixed with `VITE_`; do not put passwords or private secrets in frontend environment files.
 
-Staff profile pictures, menu item images and category images are selected from the admin's computer using the file picker. The backend accepts PNG, JPEG and WebP images up to 5 MB and stores them under `backend/uploads/profiles` or `backend/uploads/menu`; no image URL is used in the admin forms.
+## Vercel deployment
+
+Deploy the frontend and backend as two separate Vercel projects:
+
+1. Create a Vercel project with the repository root directory set to `frontend`. Leave the framework preset as Vite and use the default install/build settings. Set `VITE_API_URL` to `https://<backend-domain>/api/v1`.
+2. Create another Vercel project from the same repository with the root directory set to `backend`. The included `api/index.js` and `vercel.json` expose the Express API as a serverless function.
+3. Set these backend project environment variables in Vercel:
+   - `MONGODB_URI` (required; allow Vercel's outbound connection in the MongoDB network access rules)
+   - `JWT_SECRET` (required; use a long, random secret)
+   - `FRONTEND_URL` (required; the deployed frontend origin, such as `https://your-site.vercel.app`)
+   - `MONGODB_DB_NAME` and `JWT_EXPIRES_IN` (optional; default to `maison_bistro` and `7d`)
+4. Redeploy both projects after setting their environment variables. Check `https://<backend-domain>/health` to verify the API deployment.
+
+Vercel's function filesystem is temporary. Existing images under `backend/uploads` are included with the backend deployment, and new uploads use `/tmp` so they do not fail on the read-only deployment filesystem. New profile/menu images are not durable and may disappear or be unavailable across function instances; configure persistent object storage before relying on uploads in production.
+
+Staff profile pictures, menu item images and category images are selected from the admin's computer using the file picker. The backend accepts PNG, JPEG and WebP images up to 5 MB and stores them under `backend/uploads/profiles` or `backend/uploads/menu` during local development; no image URL is used in the admin forms.
 
 Waiters can sign in at `http://localhost:5173/waiter/login`. The duty dashboard loads active menu categories and items, lets a waiter click items into a current order, select an available table, add guest details, adjust quantities and submit a dine-in order. The waiter API is protected by the `waiter` role at `/api/v1/waiter`; submitted orders receive an order number, configured tax/service charge, the logged-in waiter as `createdBy`, and mark the selected table as occupied.
 
